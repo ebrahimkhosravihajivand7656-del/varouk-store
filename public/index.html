@@ -1,12 +1,338 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>هایپر پروتئین واروک</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>هایپر پروتئین واروک</title>
+
+<style>
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family:Tahoma,Arial,sans-serif;
+  background:#f5f5f5;
+  color:#171717
+}
+header{
+  background:#111;
+  color:#fff;
+  padding:14px 5%;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:15px;
+  position:sticky;
+  top:0;
+  z-index:10
+}
+.logo{
+  font-size:24px;
+  font-weight:bold;
+  color:#d6ad55
+}
+.cart{
+  background:#d6ad55;
+  color:#111;
+  border:0;
+  padding:10px 16px;
+  border-radius:8px;
+  font-weight:bold
+}
+.hero{
+  background:linear-gradient(135deg,#111,#292929);
+  color:white;
+  padding:55px 7%;
+  text-align:center
+}
+.hero h1{
+  font-size:34px;
+  margin:0 0 15px;
+  color:#d6ad55
+}
+.hero p{
+  font-size:18px;
+  margin-bottom:25px
+}
+.btn{
+  display:inline-block;
+  background:#d6ad55;
+  color:#111;
+  padding:13px 25px;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:bold;
+  border:0;
+  cursor:pointer
+}
+.container{
+  width:90%;
+  max-width:1100px;
+  margin:30px auto
+}
+.title{
+  font-size:24px;
+  margin-bottom:18px;
+  border-right:5px solid #d6ad55;
+  padding-right:10px
+}
+.categories{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:12px
+}
+.category{
+  background:white;
+  padding:20px 10px;
+  text-align:center;
+  border-radius:10px;
+  box-shadow:0 2px 8px #0001;
+  font-weight:bold
+}
+.prices{
+  background:#111;
+  color:white;
+  border-radius:12px;
+  overflow:hidden
+}
+.price{
+  display:flex;
+  justify-content:space-between;
+  padding:15px 18px;
+  border-bottom:1px solid #333
+}
+.price:last-child{border:0}
+.price strong{color:#d6ad55}
+.products{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:15px
+}
+.product{
+  background:white;
+  border-radius:12px;
+  padding:15px;
+  box-shadow:0 2px 10px #0001;
+  text-align:center
+}
+.product-img{
+  height:110px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:65px
+}
+.product h3{
+  font-size:16px;
+  min-height:40px
+}
+.price-product{
+  color:#b4872c;
+  font-size:18px;
+  font-weight:bold;
+  margin:10px
+}
+.product button{
+  width:100%
+}
+.wholesale{
+  background:#111;
+  color:white;
+  padding:35px 20px;
+  text-align:center;
+  border-radius:12px
+}
+.wholesale h2{color:#d6ad55}
+footer{
+  background:#111;
+  color:#aaa;
+  text-align:center;
+  padding:30px 15px;
+  margin-top:40px
+}
+footer strong{color:#d6ad55}
+@media(max-width:700px){
+  header{padding:12px 4%}
+  .logo{font-size:19px}
+  .hero{padding:40px 20px}
+  .hero h1{font-size:27px}
+  .categories{
+    grid-template-columns:repeat(2,1fr)
+  }
+  .products{
+    grid-template-columns:repeat(2,1fr)
+  }
+  .product{
+    padding:10px
+  }
+  .product-img{
+    height:90px;
+    font-size:52px
+  }
+}
+</style>
 </head>
+
 <body>
-    <h1>هایپر پروتئین واروک</h1>
-    <p>سایت واروک در حال آماده‌سازی است.</p>
+
+<header>
+  <div class="logo">هایپر پروتئین واروک</div>
+  <button class="cart" onclick="showCart()">🛒 سبد خرید (<span id="cartCount">0</span>)</button>
+</header>
+
+<section class="hero">
+  <h1>هایپر پروتئین واروک</h1>
+  <p>تازه‌ترین محصولات پروتئینی و مواد غذایی با کیفیت</p>
+  <a href="#products" class="btn">مشاهده محصولات</a>
+</section>
+
+<div class="container">
+
+<section>
+<h2 class="title">دسته‌بندی محصولات</h2>
+<div class="categories">
+<div class="category">🥩 پروتئینی</div>
+<div class="category">🥛 لبنیات</div>
+<div class="category">🛒 مواد غذایی</div>
+<div class="category">🥤 نوشیدنی</div>
+<div class="category">🥜 خشکبار</div>
+<div class="category">🍿 تنقلات</div>
+<div class="category">🧴 شوینده</div>
+<div class="category">🧻 سلولزی</div>
+</div>
+</section>
+
+<section style="margin-top:40px">
+<h2 class="title">قیمت روز</h2>
+
+<div class="prices" id="dailyPrices">
+<div class="price">
+<span>مرغ کامل تازه</span>
+<strong>۳۴۵,۰۰۰ تومان</strong>
+</div>
+<div class="price">
+<span>فیله مرغ</span>
+<strong>۷۰۰,۰۰۰ تومان</strong>
+</div>
+<div class="price">
+<span>شنیسل</span>
+<strong>۶۶۰,۰۰۰ تومان</strong>
+</div>
+<div class="price">
+<span>ران مرغ</span>
+<strong>۳۳۰,۰۰۰ تومان</strong>
+</div>
+<div class="price">
+<span>کتف و بال</span>
+<strong>۳۷۰,۰۰۰ تومان</strong>
+</div>
+</div>
+</section>
+
+<section id="products" style="margin-top:40px">
+<h2 class="title">محصولات فروشگاه</h2>
+<div class="products" id="productList">
+<div class="product">
+<div class="product-img">🍗</div>
+<h3>مرغ کامل تازه</h3>
+<div class="price-product">۳۴۵,۰۰۰ تومان / کیلو</div>
+<button class="btn" onclick="addCart('مرغ کامل تازه',345000)">افزودن به سبد</button>
+</div>
+
+<div class="product">
+<div class="product-img">🥩</div>
+<h3>فیله مرغ</h3>
+<div class="price-product">۷۰۰,۰۰۰ تومان / کیلو</div>
+<button class="btn" onclick="addCart('فیله مرغ',700000)">افزودن به سبد</button>
+</div>
+
+<div class="product">
+<div class="product-img">🍗</div>
+<h3>شنیسل مرغ</h3>
+<div class="price-product">۶۶۰,۰۰۰ تومان / کیلو</div>
+<button class="btn" onclick="addCart('شنیسل مرغ',660000)">افزودن به سبد</button>
+</div>
+
+<div class="product">
+<div class="product-img">🍗</div>
+<h3>ران مرغ</h3>
+<div class="price-product">۳۳۰,۰۰۰ تومان / کیلو</div>
+<button class="btn" onclick="addCart('ران مرغ',330000)">افزودن به سبد</button>
+</div>
+
+<div class="product">
+<div class="product-img">🧀</div>
+<h3>پنیر پیتزا ۲ کیلویی</h3>
+<div class="price-product">۹۵۰,۰۰۰ تومان</div>
+<button class="btn" onclick="addCart('پنیر پیتزا ۲ کیلویی',950000)">افزودن به سبد</button>
+</div>
+
+<div class="product">
+<div class="product-img">🥤</div>
+<h3>نوشابه</h3>
+<div class="price-product">۳۹,۰۰۰ تومان</div>
+<button class="btn" onclick="addCart('نوشابه',39000)">افزودن به سبد</button>
+</div>
+
+<div class="product">
+<div class="product-img">🥜</div>
+<h3>تخمه اعلا</h3>
+<div class="price-product">۸۵۰,۰۰۰ تومان / کیلو</div>
+<button class="btn" onclick="addCart('تخمه اعلا',850000)">افزودن به سبد</button>
+</div>
+
+<div class="product">
+<div class="product-img">🧴</div>
+<h3>پودر لباسشویی تست ۵۰۰ گرم</h3>
+<div class="price-product">۷۹,۸۰۰ تومان</div>
+<button class="btn" onclick="addCart('پودر لباسشویی تست ۵۰۰ گرم',79800)">افزودن به سبد</button>
+</div>
+</div>
+</section>
+
+<section style="margin-top:40px">
+<div class="wholesale">
+<h2>خرید عمده دارید؟</h2>
+<p>برای سفارش‌های عمده با ما تماس بگیرید.</p>
+<a class="btn" href="tel:09369817656">📞 تماس با واروک</a>
+</div>
+</section>
+
+</div>
+
+<footer>
+<p><strong>هایپر پروتئین واروک</strong></p>
+<p>فروشگاه مواد غذایی و پروتئینی</p>
+<p>📞 09369817656</p>
+<p>فولادشهر، ناحیه ۲، بلوار ولیعصر</p>
+</footer>
+
+<script>
+let cart=[];
+
+function addCart(name,price){
+  cart.push({name:name,price:price});
+  document.getElementById("cartCount").innerText=cart.length;
+  alert("محصول به سبد خرید اضافه شد ✅");
+}
+
+function showCart(){
+  if(cart.length===0){
+    alert("سبد خرید شما خالی است.");
+    return;
+  }
+
+  let total=cart.reduce((sum,item)=>sum+item.price,0);
+  let text="سبد خرید شما:\n\n";
+
+  cart.forEach((item,i)=>{
+    text+=(i+1)+"- "+item.name+" : "+item.price.toLocaleString("fa-IR")+" تومان\n";
+  });
+
+  text+="\nمجموع: "+total.toLocaleString("fa-IR")+" تومان";
+
+  alert(text);
+}
+</script>
+
 </body>
 </html>
