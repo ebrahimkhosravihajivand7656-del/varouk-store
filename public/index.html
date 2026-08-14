@@ -1,1560 +1,2005 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
-
 <head>
-
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport"
-content="width=device-width,initial-scale=1.0">
+<title>هایپر پروتئین واروک | فروشگاه آنلاین</title>
 
-<title>هایپر پروتئین واروک</title>
+<meta name="description" content="هایپر پروتئین واروک - خرید آنلاین محصولات پروتئینی، مواد غذایی، لبنیات، نوشیدنی و تنقلات">
 
 <style>
-
-*{
-box-sizing:border-box;
-margin:0;
-padding:0
-}
+@import url('https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap');
 
 :root{
---black:#0d0d0d;
---dark:#151515;
---gold:#d4af37;
---gold2:#f1d77a;
---white:#fff;
---gray:#f4f4f4;
---text:#202020;
---muted:#777;
---danger:#c62828;
+    --black:#070707;
+    --black2:#0d0d0d;
+    --card:#111111;
+    --card2:#151515;
+    --gold:#d9a928;
+    --gold2:#f3c64c;
+    --gold3:#9d7215;
+    --white:#f7f7f7;
+    --gray:#999;
+    --border:#292929;
+    --red:#d92d20;
+}
+
+*{
+    box-sizing:border-box;
+    margin:0;
+    padding:0;
+}
+
+html{
+    scroll-behavior:smooth;
 }
 
 body{
-font-family:Tahoma,Arial,sans-serif;
-background:var(--gray);
-color:var(--text);
-line-height:1.8
+    font-family:'Vazirmatn',Tahoma,sans-serif;
+    background:
+        radial-gradient(circle at 50% -10%,#222 0,#0a0a0a 35%,#050505 80%);
+    color:var(--white);
+    line-height:1.8;
+}
+
+a{
+    color:inherit;
+    text-decoration:none;
 }
 
 button,
-input,
-textarea,
-select{
-font-family:inherit
+input{
+    font-family:inherit;
 }
 
 button{
-cursor:pointer
-}
-
-header{
-background:var(--black);
-color:white;
-position:sticky;
-top:0;
-z-index:100;
-box-shadow:0 3px 20px #0004
-}
-
-.header{
-max-width:1200px;
-margin:auto;
-padding:12px 20px;
-display:flex;
-align-items:center;
-justify-content:space-between;
-gap:20px
-}
-
-.brand{
-display:flex;
-align-items:center;
-gap:12px;
-color:var(--gold);
-font-size:22px;
-font-weight:bold
-}
-
-.brand img{
-height:55px;
-width:auto;
-max-width:150px;
-object-fit:contain
-}
-
-.nav{
-display:flex;
-gap:10px;
-align-items:center
-}
-
-.nav button{
-background:transparent;
-border:0;
-color:white;
-padding:8px 12px
-}
-
-.cart-btn{
-background:var(--gold)!important;
-color:#111!important;
-border-radius:8px;
-font-weight:bold
-}
-
-.hero{
-background:
-linear-gradient(135deg,#080808,#242424);
-color:white;
-padding:80px 20px;
-text-align:center
-}
-
-.hero h1{
-font-size:42px;
-color:var(--gold2);
-margin-bottom:10px
-}
-
-.hero p{
-font-size:19px;
-color:#ddd;
-margin-bottom:25px
-}
-
-.btn{
-border:0;
-background:var(--gold);
-color:#111;
-padding:12px 22px;
-border-radius:8px;
-font-weight:bold;
-transition:.2s
-}
-
-.btn:hover{
-transform:translateY(-2px);
-background:var(--gold2)
+    cursor:pointer;
 }
 
 .container{
-max-width:1200px;
-margin:auto;
-padding:45px 20px
+    width:min(1320px,94%);
+    margin:auto;
 }
 
-.section{
-margin-bottom:50px
-}
-
-.title{
-font-size:27px;
-margin-bottom:20px;
-border-right:5px solid var(--gold);
-padding-right:12px
-}
-
-.categories{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:15px
-}
-
-.category{
-background:white;
-padding:25px 10px;
-border-radius:12px;
-text-align:center;
-font-weight:bold;
-box-shadow:0 3px 15px #0001;
-cursor:pointer;
-transition:.2s
-}
-
-.category:hover{
-transform:translateY(-3px)
-}
-
-.daily{
-background:var(--black);
-color:white;
-border-radius:15px;
-overflow:hidden
-}
-
-.daily-head{
-padding:18px;
-background:#181818;
-color:var(--gold2)
-}
-
-.price-row{
-display:flex;
-justify-content:space-between;
-padding:14px 20px;
-border-bottom:1px solid #333
-}
-
-.price-row strong{
-color:var(--gold2)
-}
-
-.products{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:18px
-}
-
-.product{
-background:white;
-border-radius:14px;
-overflow:hidden;
-box-shadow:0 4px 15px #0001;
-padding:15px
-}
-
-.product-icon{
-height:130px;
-display:flex;
-align-items:center;
-justify-content:center;
-font-size:70px;
-background:#fafafa;
-border-radius:10px;
-margin-bottom:12px
-}
-
-.product h3{
-font-size:17px;
-min-height:55px
-}
-
-.product-desc{
-font-size:13px;
-color:var(--muted);
-min-height:45px
-}
-
-.product-price{
-font-size:20px;
-font-weight:bold;
-color:#a27c1e;
-margin:10px 0
-}
-
-.old{
-font-size:13px;
-color:#999;
-text-decoration:line-through;
-margin-right:5px
-}
-
-.product .btn{
-width:100%
-}
-
-.wholesale{
-background:
-linear-gradient(135deg,#0b0b0b,#242424);
-color:white;
-padding:45px 20px;
-border-radius:15px;
-text-align:center
-}
-
-.wholesale h2{
-color:var(--gold2);
-margin-bottom:10px
-}
-
-footer{
-background:#0b0b0b;
-color:#aaa;
-padding:40px 20px;
-text-align:center
-}
-
-footer strong{
-color:var(--gold)
-}
-
-/* MODAL */
-
-.modal{
-display:none;
-position:fixed;
-inset:0;
-background:#0009;
-z-index:1000;
-align-items:center;
-justify-content:center;
-padding:15px
-}
-
-.modal.active{
-display:flex
-}
-
-.modal-box{
-background:white;
-width:100%;
-max-width:520px;
-max-height:90vh;
-overflow:auto;
-border-radius:15px;
-padding:25px;
-position:relative
-}
-
-.close{
-position:absolute;
-left:15px;
-top:10px;
-border:0;
-background:none;
-font-size:25px
-}
-
-.form{
-display:flex;
-flex-direction:column;
-gap:12px;
-margin-top:20px
-}
-
-.form input,
-.form textarea,
-.form select{
-width:100%;
-padding:12px;
-border:1px solid #ddd;
-border-radius:8px;
-outline:none
-}
-
-.form textarea{
-min-height:100px
-}
-
-.cart-item{
-display:flex;
-justify-content:space-between;
-align-items:center;
-gap:10px;
-border-bottom:1px solid #eee;
-padding:12px 0
-}
-
-.qty{
-display:flex;
-align-items:center;
-gap:8px
-}
-
-.qty button{
-width:30px;
-height:30px;
-border:0;
-border-radius:6px;
-background:#eee
-}
-
-.total{
-font-size:20px;
-font-weight:bold;
-margin:20px 0;
-color:#a27c1e
-}
-
-.notice{
-padding:12px;
-border-radius:8px;
-background:#f7f0d7;
-margin:10px 0
-}
-
-.admin-grid{
-display:grid;
-grid-template-columns:repeat(4,1fr);
-gap:12px;
-margin:20px 0
-}
-
-.stat{
-background:#111;
-color:white;
-padding:20px;
-border-radius:10px
-}
-
-.stat strong{
-display:block;
-font-size:25px;
-color:var(--gold2)
-}
-
-.table{
-width:100%;
-border-collapse:collapse;
-margin-top:20px
-}
-
-.table th,
-.table td{
-padding:10px;
-border-bottom:1px solid #ddd;
-text-align:right
-}
-
-@media(max-width:800px){
+/* ================= HEADER ================= */
 
 .header{
-padding:10px
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(5,5,5,.94);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #242424;
 }
 
-.brand{
-font-size:16px
+.topbar{
+    height:38px;
+    border-bottom:1px solid #1f1f1f;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    font-size:12px;
+    color:#aaa;
 }
 
-.brand img{
-height:45px;
-max-width:120px
+.topbar strong{
+    color:var(--gold2);
 }
 
-.nav button:not(.cart-btn){
-display:none
+.main-header{
+    min-height:90px;
+    display:grid;
+    grid-template-columns:1fr 250px 1fr;
+    align-items:center;
+    gap:20px;
 }
+
+.logo-box{
+    text-align:center;
+}
+
+.logo-img{
+    max-width:170px;
+    max-height:72px;
+    object-fit:contain;
+}
+
+.logo-fallback{
+    display:none;
+    color:var(--gold2);
+    font-size:38px;
+    font-weight:900;
+    line-height:1;
+}
+
+.logo-sub{
+    font-size:12px;
+    color:#ddd;
+    margin-top:-4px;
+}
+
+.search{
+    position:relative;
+}
+
+.search input{
+    width:100%;
+    height:46px;
+    background:#161616;
+    border:1px solid #303030;
+    border-radius:14px;
+    color:white;
+    padding:0 48px 0 18px;
+    outline:none;
+}
+
+.search input:focus{
+    border-color:var(--gold);
+    box-shadow:0 0 0 2px rgba(217,169,40,.1);
+}
+
+.search-icon{
+    position:absolute;
+    right:15px;
+    top:9px;
+    font-size:22px;
+    color:var(--gold2);
+}
+
+.header-actions{
+    display:flex;
+    justify-content:flex-start;
+    gap:12px;
+    align-items:center;
+}
+
+.action{
+    border:1px solid #383838;
+    background:#111;
+    border-radius:13px;
+    min-height:45px;
+    padding:6px 14px;
+    display:flex;
+    align-items:center;
+    gap:8px;
+    color:#eee;
+}
+
+.action:hover{
+    border-color:var(--gold);
+}
+
+.cart-action{
+    border-color:#765b1d;
+}
+
+.cart-count{
+    background:var(--gold);
+    color:#111;
+    width:22px;
+    height:22px;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    border-radius:50%;
+    font-size:12px;
+    font-weight:900;
+}
+
+/* ================= NAV ================= */
+
+.nav{
+    border-top:1px solid #191919;
+}
+
+.nav-inner{
+    min-height:48px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:35px;
+    overflow:auto;
+}
+
+.nav a{
+    white-space:nowrap;
+    font-size:13px;
+    color:#ddd;
+    position:relative;
+    padding:12px 0;
+}
+
+.nav a:hover,
+.nav a.active{
+    color:var(--gold2);
+}
+
+.nav a.active:after{
+    content:"";
+    position:absolute;
+    bottom:0;
+    right:0;
+    left:0;
+    height:2px;
+    background:var(--gold2);
+}
+
+/* ================= HERO ================= */
 
 .hero{
-padding:55px 15px
+    margin-top:15px;
+    height:370px;
+    border:1px solid #292929;
+    border-radius:18px;
+    overflow:hidden;
+    position:relative;
+    background:
+        linear-gradient(90deg,rgba(0,0,0,.05),rgba(0,0,0,.88)),
+        url("https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=1800&q=85")
+        center/cover;
+}
+
+.hero:after{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,transparent 20%,rgba(0,0,0,.2) 45%,rgba(0,0,0,.85) 75%);
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+    width:55%;
+    margin-right:auto;
+    height:100%;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    padding:35px 55px;
 }
 
 .hero h1{
-font-size:30px
+    font-size:44px;
+    font-weight:900;
+    line-height:1.35;
+    margin-bottom:15px;
 }
+
+.hero h1 span{
+    color:var(--gold2);
+}
+
+.hero p{
+    color:#ddd;
+    font-size:18px;
+    max-width:560px;
+    margin-bottom:25px;
+}
+
+.hero-buttons{
+    display:flex;
+    gap:12px;
+}
+
+.btn{
+    min-height:48px;
+    padding:8px 25px;
+    border-radius:9px;
+    border:1px solid #76591c;
+    font-weight:700;
+    display:inline-flex;
+    justify-content:center;
+    align-items:center;
+    gap:8px;
+}
+
+.btn-gold{
+    background:linear-gradient(135deg,#f1c044,#b98216);
+    color:#111;
+}
+
+.btn-dark{
+    background:#101010;
+    color:white;
+}
+
+.btn:hover{
+    transform:translateY(-2px);
+    filter:brightness(1.08);
+}
+
+.hero-dots{
+    position:absolute;
+    bottom:12px;
+    left:50%;
+    z-index:4;
+    display:flex;
+    gap:8px;
+}
+
+.dot{
+    width:25px;
+    height:5px;
+    border-radius:10px;
+    background:#555;
+}
+
+.dot.active{
+    background:var(--gold2);
+}
+
+/* ================= SECTION ================= */
+
+.section{
+    margin-top:22px;
+}
+
+.section-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:12px;
+}
+
+.section-title{
+    font-size:21px;
+    font-weight:800;
+}
+
+.section-title span{
+    color:var(--gold2);
+}
+
+.more{
+    color:#aaa;
+    font-size:12px;
+    border:1px solid #333;
+    padding:4px 12px;
+    border-radius:8px;
+}
+
+.more:hover{
+    color:var(--gold2);
+    border-color:var(--gold3);
+}
+
+/* ================= CATEGORIES ================= */
 
 .categories{
-grid-template-columns:repeat(2,1fr)
+    display:grid;
+    grid-template-columns:repeat(9,1fr);
+    gap:10px;
 }
 
-.products{
-grid-template-columns:repeat(2,1fr)
+.category{
+    min-height:85px;
+    border:1px solid #292929;
+    background:linear-gradient(145deg,#151515,#0c0c0c);
+    border-radius:13px;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    gap:4px;
+    transition:.2s;
 }
 
-.product-icon{
-height:100px;
-font-size:55px
+.category:hover{
+    border-color:var(--gold);
+    transform:translateY(-3px);
 }
 
-.product h3{
-font-size:15px
+.category-icon{
+    font-size:27px;
+    filter:grayscale(.1);
 }
 
-.product-price{
-font-size:16px
+.category span:last-child{
+    font-size:12px;
 }
 
-.admin-grid{
-grid-template-columns:repeat(2,1fr)
+/* ================= BENEFITS ================= */
+
+.benefits{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
 }
 
+.benefit{
+    border:1px solid #292929;
+    background:linear-gradient(135deg,#151515,#0b0b0b);
+    border-radius:14px;
+    padding:17px;
+    display:flex;
+    align-items:center;
+    gap:14px;
 }
 
+.benefit-icon{
+    font-size:35px;
+    color:var(--gold2);
+}
+
+.benefit h3{
+    color:var(--gold2);
+    font-size:16px;
+}
+
+.benefit p{
+    color:#aaa;
+    font-size:12px;
+}
+
+/* ================= PRODUCTS LAYOUT ================= */
+
+.products-layout{
+    display:grid;
+    grid-template-columns:1fr 2fr 1fr;
+    gap:12px;
+}
+
+.panel{
+    background:linear-gradient(145deg,#141414,#090909);
+    border:1px solid #2a2a2a;
+    border-radius:15px;
+    overflow:hidden;
+}
+
+.panel-title{
+    padding:12px 15px;
+    border-bottom:1px solid #252525;
+    color:var(--gold2);
+    font-weight:800;
+    font-size:16px;
+}
+
+.daily-list{
+    padding:5px 13px 12px;
+}
+
+.daily-item{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    min-height:38px;
+    border-bottom:1px solid #202020;
+    font-size:12px;
+}
+
+.daily-item:last-child{
+    border-bottom:0;
+}
+
+.daily-price{
+    color:var(--gold2);
+    font-weight:800;
+}
+
+/* ================= PRODUCT CARDS ================= */
+
+.product-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:9px;
+    padding:10px;
+}
+
+.product-card{
+    position:relative;
+    background:#101010;
+    border:1px solid #2b2b2b;
+    border-radius:12px;
+    overflow:hidden;
+    transition:.2s;
+}
+
+.product-card:hover{
+    border-color:#88681f;
+    transform:translateY(-3px);
+}
+
+.discount{
+    position:absolute;
+    top:7px;
+    right:7px;
+    background:#bd221c;
+    color:#fff;
+    border-radius:7px;
+    padding:1px 7px;
+    font-size:11px;
+    z-index:2;
+}
+
+.product-image{
+    height:125px;
+    background:#222 center/cover no-repeat;
+}
+
+.product-info{
+    padding:8px;
+}
+
+.product-name{
+    font-size:12px;
+    min-height:42px;
+}
+
+.product-unit{
+    color:#999;
+    font-size:10px;
+}
+
+.price{
+    color:var(--gold2);
+    font-size:17px;
+    font-weight:900;
+    margin-top:4px;
+}
+
+.old-price{
+    color:#666;
+    text-decoration:line-through;
+    font-size:10px;
+    margin-right:5px;
+}
+
+.product-bottom{
+    display:flex;
+    gap:5px;
+    margin-top:7px;
+}
+
+.qty-btn{
+    width:30px;
+    height:30px;
+    background:#171717;
+    border:1px solid #4b3b15;
+    color:var(--gold2);
+    border-radius:6px;
+}
+
+.add-btn{
+    flex:1;
+    background:var(--gold);
+    color:#111;
+    border:0;
+    border-radius:6px;
+    font-size:11px;
+    font-weight:900;
+}
+
+/* ================= RANKED PRODUCTS ================= */
+
+.rank-list{
+    padding:8px;
+}
+
+.rank-item{
+    display:grid;
+    grid-template-columns:25px 55px 1fr;
+    align-items:center;
+    gap:8px;
+    border-bottom:1px solid #242424;
+    padding:7px 0;
+}
+
+.rank-number{
+    width:23px;
+    height:23px;
+    border-radius:50%;
+    background:#191919;
+    border:1px solid #755a1e;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    color:var(--gold2);
+    font-size:11px;
+    font-weight:900;
+}
+
+.rank-image{
+    width:55px;
+    height:45px;
+    border-radius:8px;
+    background:center/cover;
+}
+
+.rank-name{
+    font-size:11px;
+}
+
+.rank-price{
+    color:#aaa;
+    font-size:10px;
+}
+
+/* ================= ABOUT ================= */
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    min-height:220px;
+    border:1px solid #292929;
+    border-radius:15px;
+    overflow:hidden;
+    background:#0d0d0d;
+}
+
+.about-text{
+    padding:35px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
+
+.about-text h2{
+    color:var(--gold2);
+    font-size:25px;
+    margin-bottom:10px;
+}
+
+.about-text p{
+    color:#bbb;
+    font-size:14px;
+    max-width:520px;
+}
+
+.about-image{
+    background:
+        linear-gradient(90deg,#0d0d0d,transparent 45%),
+        url("https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1200&q=85")
+        center/cover;
+}
+
+/* ================= FEATURES BAR ================= */
+
+.features{
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    border:1px solid #292929;
+    border-radius:14px;
+    overflow:hidden;
+}
+
+.feature{
+    min-height:70px;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:12px;
+    border-left:1px solid #292929;
+}
+
+.feature:last-child{
+    border-left:0;
+}
+
+.feature-icon{
+    color:var(--gold2);
+    font-size:28px;
+}
+
+.feature strong{
+    color:var(--gold2);
+    display:block;
+    font-size:14px;
+}
+
+.feature span{
+    color:#aaa;
+    font-size:10px;
+}
+
+/* ================= NEWSLETTER ================= */
+
+.newsletter{
+    margin-top:18px;
+    background:linear-gradient(100deg,#111,#191919);
+    border:1px solid #292929;
+    border-radius:14px;
+    padding:17px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    gap:20px;
+}
+
+.newsletter-title{
+    font-size:14px;
+}
+
+.newsletter-form{
+    display:flex;
+    gap:7px;
+    width:470px;
+}
+
+.newsletter input{
+    flex:1;
+    background:#0c0c0c;
+    border:1px solid #303030;
+    color:#fff;
+    padding:0 15px;
+    height:42px;
+    border-radius:8px;
+    outline:none;
+}
+
+.newsletter button{
+    width:100px;
+    border:0;
+    border-radius:8px;
+    background:var(--gold);
+    color:#111;
+    font-weight:900;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+    margin-top:25px;
+    border-top:1px solid #292929;
+    padding:35px 0 15px;
+    background:#070707;
+}
+
+.footer-grid{
+    display:grid;
+    grid-template-columns:1.3fr 1fr 1fr 1fr 1.3fr;
+    gap:25px;
+}
+
+.footer-logo{
+    color:var(--gold2);
+    font-size:32px;
+    font-weight:900;
+}
+
+.footer p,
+.footer a{
+    color:#999;
+    font-size:12px;
+}
+
+.footer h3{
+    color:var(--gold2);
+    font-size:15px;
+    margin-bottom:9px;
+}
+
+.footer a{
+    display:block;
+    margin:4px 0;
+}
+
+.footer a:hover{
+    color:white;
+}
+
+.socials{
+    display:flex;
+    gap:9px;
+    margin-top:12px;
+}
+
+.social{
+    width:34px;
+    height:34px;
+    border:1px solid #333;
+    border-radius:8px;
+    display:flex!important;
+    align-items:center;
+    justify-content:center;
+    color:var(--gold2)!important;
+}
+
+.copyright{
+    border-top:1px solid #222;
+    margin-top:25px;
+    padding-top:13px;
+    text-align:center;
+    color:#666;
+    font-size:10px;
+}
+
+/* ================= CART ================= */
+
+.overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(0,0,0,.65);
+    z-index:1999;
+    display:none;
+}
+
+.overlay.show{
+    display:block;
+}
+
+.cart-drawer{
+    position:fixed;
+    top:0;
+    left:0;
+    width:min(420px,92%);
+    height:100vh;
+    background:#0d0d0d;
+    z-index:2000;
+    transform:translateX(-100%);
+    transition:.3s;
+    border-right:1px solid #333;
+    display:flex;
+    flex-direction:column;
+}
+
+.cart-drawer.show{
+    transform:translateX(0);
+}
+
+.cart-head{
+    padding:20px;
+    border-bottom:1px solid #292929;
+    display:flex;
+    justify-content:space-between;
+    color:var(--gold2);
+}
+
+.close{
+    background:none;
+    border:0;
+    color:white;
+    font-size:25px;
+}
+
+.cart-items{
+    flex:1;
+    overflow:auto;
+    padding:15px;
+}
+
+.cart-item{
+    display:flex;
+    gap:10px;
+    border-bottom:1px solid #222;
+    padding:10px 0;
+}
+
+.cart-item-img{
+    width:65px;
+    height:55px;
+    border-radius:7px;
+    background:center/cover;
+}
+
+.cart-item-info{
+    flex:1;
+}
+
+.cart-item-info strong{
+    font-size:12px;
+}
+
+.cart-item-info p{
+    color:var(--gold2);
+    font-size:12px;
+}
+
+.cart-footer{
+    padding:18px;
+    border-top:1px solid #292929;
+}
+
+.cart-total{
+    display:flex;
+    justify-content:space-between;
+    margin-bottom:12px;
+    font-weight:900;
+}
+
+.empty{
+    text-align:center;
+    color:#777;
+    padding:50px 10px;
+}
+
+/* ================= MOBILE ================= */
+
+.mobile-menu{
+    display:none;
+}
+
+@media(max-width:1000px){
+
+    .main-header{
+        grid-template-columns:1fr;
+        padding:12px 0;
+    }
+
+    .logo-box{
+        order:-2;
+    }
+
+    .header-actions{
+        justify-content:center;
+    }
+
+    .search{
+        order:-1;
+    }
+
+    .categories{
+        grid-template-columns:repeat(5,1fr);
+    }
+
+    .products-layout{
+        grid-template-columns:1fr;
+    }
+
+    .ranked{
+        order:-1;
+    }
+
+    .about{
+        grid-template-columns:1fr;
+    }
+
+    .about-image{
+        min-height:200px;
+    }
+
+    .footer-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+}
+
+@media(max-width:650px){
+
+    .container{
+        width:94%;
+    }
+
+    .topbar{
+        font-size:9px;
+    }
+
+    .nav-inner{
+        justify-content:flex-start;
+        gap:20px;
+    }
+
+    .hero{
+        height:330px;
+    }
+
+    .hero-content{
+        width:100%;
+        padding:25px;
+        justify-content:flex-end;
+        padding-bottom:35px;
+        background:linear-gradient(transparent,rgba(0,0,0,.9));
+    }
+
+    .hero h1{
+        font-size:27px;
+    }
+
+    .hero p{
+        font-size:13px;
+    }
+
+    .categories{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .benefits{
+        grid-template-columns:1fr;
+    }
+
+    .product-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .product-image{
+        height:105px;
+    }
+
+    .features{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .feature:nth-child(1),
+    .feature:nth-child(2){
+        border-bottom:1px solid #292929;
+    }
+
+    .feature:nth-child(2){
+        border-left:0;
+    }
+
+    .newsletter{
+        flex-direction:column;
+        align-items:stretch;
+    }
+
+    .newsletter-form{
+        width:100%;
+    }
+
+    .footer-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .footer-grid>div:first-child{
+        grid-column:1/-1;
+    }
+
+    .action{
+        padding:6px 10px;
+    }
+}
+
+@media(max-width:400px){
+
+    .product-grid{
+        grid-template-columns:1fr 1fr;
+    }
+
+    .hero-buttons{
+        flex-direction:column;
+    }
+
+    .btn{
+        width:100%;
+    }
+}
 </style>
-
 </head>
 
 <body>
 
-<header>
+<!-- HEADER -->
 
-<div class="header">
+<header class="header">
 
-<div class="brand">
+    <div class="topbar container">
+        <div>🚚 ارسال سریع به <strong>سراسر اصفهان</strong></div>
+        <div>📞 شماره تماس: <strong>09369817656</strong></div>
+    </div>
 
-<img
-src="/assets/varouk-logo.svg"
-onerror="this.style.display='none'"
-alt="واروک">
+    <div class="main-header container">
 
-<span>هایپر پروتئین واروک</span>
+        <div class="search">
+            <span class="search-icon">⌕</span>
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="جستجو در محصولات واروک..."
+                oninput="searchProducts()">
+        </div>
 
-</div>
+        <div class="logo-box">
 
-<div class="nav">
+            <img
+                src="/assets/varouk-logo.svg"
+                class="logo-img"
+                alt="واروک"
+                onerror="this.style.display='none';document.querySelector('.logo-fallback').style.display='block'">
 
-<button onclick="scrollToSection('products')">
-محصولات
-</button>
+            <div class="logo-fallback">واروک</div>
 
-<button onclick="openLogin()">
-ورود
-</button>
+            <div class="logo-sub">هایپر پروتئین</div>
 
-<button
-class="cart-btn"
-onclick="openCart()">
-🛒 سبد <span id="cartCount">0</span>
-</button>
+        </div>
 
-</div>
+        <div class="header-actions">
 
-</div>
+            <button class="action" onclick="showLogin()">
+                👤 ورود / ثبت نام
+            </button>
+
+            <button class="action cart-action" onclick="openCart()">
+                🛒
+                <span>
+                    سبد خرید
+                    <br>
+                    <small id="cartTotalHeader">۰ تومان</small>
+                </span>
+                <span class="cart-count" id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </div>
+
+    <nav class="nav">
+        <div class="nav-inner container">
+
+            <a href="#" class="active">خانه</a>
+            <a href="#shop">فروشگاه</a>
+            <a href="#prices">قیمت روز</a>
+            <a href="#discounts">تخفیف‌ها</a>
+            <a href="#special">پیشنهاد ویژه</a>
+            <a href="#about">درباره ما</a>
+            <a href="#contact">تماس با ما</a>
+            <a href="#orders">پیگیری سفارش</a>
+
+        </div>
+    </nav>
 
 </header>
 
 
-<section class="hero">
-
-<h1>هایپر پروتئین واروک</h1>
-
-<p>
-تازه‌ترین محصولات پروتئینی و مواد غذایی
-با کیفیت و قیمت مناسب
-</p>
-
-<button
-class="btn"
-onclick="scrollToSection('products')">
-مشاهده محصولات
-</button>
-
-</section>
-
-
 <main class="container">
 
+<!-- HERO -->
 
-<section class="section">
+<section class="hero">
 
-<h2 class="title">
-دسته‌بندی محصولات
-</h2>
+    <div class="hero-content">
 
-<div
-class="categories"
-id="categories">
-</div>
+        <h1>
+            خرید تازه،
+            <span>سریع</span>
+            و مطمئن
+        </h1>
 
-</section>
+        <p>
+            هرآنچه برای خرید روزانه نیاز دارید
+            در <strong style="color:#f3c64c">هایپر پروتئین واروک</strong>
+        </p>
 
+        <div class="hero-buttons">
 
-<section class="section">
+            <a href="#shop" class="btn btn-gold">
+                🛍 شروع خرید
+            </a>
 
-<h2 class="title">
-قیمت روز
-</h2>
+            <a href="#prices" class="btn btn-dark">
+                🏷 قیمت روز
+            </a>
 
-<div class="daily">
+        </div>
 
-<div class="daily-head">
-آخرین قیمت‌های محصولات پروتئینی
-</div>
+    </div>
 
-<div id="dailyPrices"></div>
-
-</div>
-
-</section>
-
-
-<section
-class="section"
-id="products">
-
-<h2 class="title">
-محصولات فروشگاه
-</h2>
-
-<div
-class="products"
-id="productList">
-
-<div>
-در حال دریافت محصولات...
-</div>
-
-</div>
+    <div class="hero-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+    </div>
 
 </section>
 
 
+<!-- CATEGORIES -->
+
 <section class="section">
 
-<div class="wholesale">
+    <div class="categories">
 
-<h2>
-خرید عمده دارید؟
-</h2>
+        <a class="category" href="#shop">
+            <span class="category-icon">🧴</span>
+            <span>شوینده</span>
+        </a>
 
-<p>
-برای سفارش‌های عمده با ما در تماس باشید.
-</p>
+        <a class="category" href="#shop">
+            <span class="category-icon">🥤</span>
+            <span>نوشیدنی</span>
+        </a>
 
-<br>
+        <a class="category" href="#shop">
+            <span class="category-icon">🍫</span>
+            <span>تنقلات</span>
+        </a>
 
-<button
-class="btn"
-onclick="openWholesale()">
-ثبت درخواست عمده
-</button>
+        <a class="category" href="#shop">
+            <span class="category-icon">🛒</span>
+            <span>مواد غذایی</span>
+        </a>
 
-&nbsp;
+        <a class="category" href="#shop">
+            <span class="category-icon">🥛</span>
+            <span>لبنیات</span>
+        </a>
 
-<a
-class="btn"
-href="tel:09369817656">
-📞 تماس
-</a>
+        <a class="category" href="#shop">
+            <span class="category-icon">🍗</span>
+            <span>پروتئینی و مرغ</span>
+        </a>
 
-</div>
+        <a class="category" href="#shop">
+            <span class="category-icon">🥜</span>
+            <span>خشکبار</span>
+        </a>
+
+        <a class="category" href="#shop">
+            <span class="category-icon">🧻</span>
+            <span>سلولزی</span>
+        </a>
+
+        <a class="category" href="#shop">
+            <span class="category-icon">❄️</span>
+            <span>منجمد</span>
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- BENEFITS -->
+
+<section class="section">
+
+    <div class="benefits">
+
+        <div class="benefit">
+            <div class="benefit-icon">💳</div>
+            <div>
+                <h3>پرداخت امن</h3>
+                <p>پرداخت آنلاین با کارت شتاب و درگاه‌های معتبر</p>
+            </div>
+        </div>
+
+        <div class="benefit">
+            <div class="benefit-icon">🏅</div>
+            <div>
+                <h3>تضمین کیفیت</h3>
+                <p>بهترین کیفیت محصولات با ضمانت واروک</p>
+            </div>
+        </div>
+
+        <div class="benefit">
+            <div class="benefit-icon">🛵</div>
+            <div>
+                <h3>ارسال سریع</h3>
+                <p>ارسال در سریع‌ترین زمان به سراسر اصفهان</p>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUCTS AREA -->
+
+<section class="section" id="shop">
+
+    <div class="products-layout">
+
+        <!-- DAILY PRICE -->
+
+        <div class="panel" id="prices">
+
+            <div class="panel-title">
+                💰 قیمت روز واروک
+                <a href="#prices" class="more" style="float:left">مشاهده همه</a>
+            </div>
+
+            <div class="daily-list" id="dailyPrices">
+                <div class="empty">در حال دریافت قیمت‌ها...</div>
+            </div>
+
+        </div>
+
+
+        <!-- SPECIAL PRODUCTS -->
+
+        <div class="panel" id="special">
+
+            <div class="panel-title">
+                🔥 پیشنهادهای ویژه
+                <a href="#shop" class="more" style="float:left">مشاهده همه</a>
+            </div>
+
+            <div class="product-grid" id="productsGrid">
+                <div class="empty">در حال دریافت محصولات...</div>
+            </div>
+
+        </div>
+
+
+        <!-- BEST SELLERS -->
+
+        <div class="panel ranked">
+
+            <div class="panel-title">
+                🏆 پرفروش‌ترین‌ها
+                <a href="#shop" class="more" style="float:left">مشاهده همه</a>
+            </div>
+
+            <div class="rank-list" id="rankList"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section class="section" id="about">
+
+    <div class="about">
+
+        <div class="about-text">
+
+            <h2>هایپر پروتئین واروک</h2>
+
+            <p>
+                بزرگ‌ترین مجموعه محصولات پروتئینی و مواد غذایی
+                در اصفهان با تمرکز بر کیفیت، تازگی و قیمت مناسب.
+            </p>
+
+            <br>
+
+            <a href="#contact" class="btn btn-dark" style="width:max-content">
+                درباره ما بیشتر بدانید
+            </a>
+
+        </div>
+
+        <div class="about-image"></div>
+
+    </div>
+
+</section>
+
+
+<!-- FEATURES -->
+
+<section class="section">
+
+    <div class="features">
+
+        <div class="feature">
+            <div class="feature-icon">🎧</div>
+            <div>
+                <strong>پشتیبانی ۲۴/۷</strong>
+                <span>همیشه در کنار شما</span>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">💰</div>
+            <div>
+                <strong>قیمت مناسب</strong>
+                <span>بهترین قیمت بازار</span>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">📦</div>
+            <div>
+                <strong>تنوع بالا</strong>
+                <span>هزاران محصول متنوع</span>
+            </div>
+        </div>
+
+        <div class="feature">
+            <div class="feature-icon">⏱</div>
+            <div>
+                <strong>محصولات تازه</strong>
+                <span>هر روز بهترین منابع</span>
+            </div>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- NEWSLETTER -->
+
+<section class="newsletter">
+
+    <div class="newsletter-title">
+        ✉️ از تخفیف‌ها و جدیدترین محصولات باخبر شوید!
+    </div>
+
+    <form class="newsletter-form" onsubmit="subscribe(event)">
+
+        <input
+            type="text"
+            id="newsletterPhone"
+            placeholder="شماره موبایل خود را وارد کنید">
+
+        <button type="submit">
+            ثبت نام
+        </button>
+
+    </form>
 
 </section>
 
 </main>
 
 
-<footer>
+<!-- FOOTER -->
 
-<strong>
-هایپر پروتئین واروک
-</strong>
+<footer id="contact">
 
-<p>
-فروشگاه مواد غذایی و پروتئینی
-</p>
+<div class="container">
 
-<p>
-📞 09369817656
-</p>
+    <div class="footer-grid">
 
-<p>
-فولادشهر، ناحیه ۲، بلوار ولیعصر،
-بعد از میدان انتظار،
-مجتمع تجاری پارامونت
-</p>
+        <div class="footer">
+
+            <div class="footer-logo">واروک</div>
+
+            <p>
+                هایپر پروتئین واروک؛ بزرگ‌ترین و معتبرترین
+                مرجع خرید محصولات پروتئینی و مواد غذایی
+                با تضمین کیفیت و قیمت مناسب.
+            </p>
+
+            <div class="socials">
+
+                <a class="social" href="#">◎</a>
+                <a class="social" href="#">◉</a>
+                <a class="social" href="tel:09369817656">☎</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer">
+
+            <h3>فروشگاه</h3>
+
+            <a href="#shop">فروشگاه</a>
+            <a href="#prices">قیمت روز</a>
+            <a href="#discounts">تخفیف‌ها</a>
+            <a href="#special">پیشنهاد ویژه</a>
+            <a href="#shop">برندها</a>
+
+        </div>
+
+
+        <div class="footer">
+
+            <h3>خدمات مشتریان</h3>
+
+            <a href="#orders">پیگیری سفارش</a>
+            <a href="#">سوالات متداول</a>
+            <a href="#">شرایط و قوانین</a>
+            <a href="#">بازگشت کالا</a>
+            <a href="#">حریم خصوصی</a>
+
+        </div>
+
+
+        <div class="footer">
+
+            <h3>درباره ما</h3>
+
+            <a href="#about">درباره واروک</a>
+            <a href="#contact">تماس با ما</a>
+            <a href="#">شعبه‌ها</a>
+            <a href="#">همکاری با ما</a>
+
+        </div>
+
+
+        <div class="footer">
+
+            <h3>اطلاعات تماس</h3>
+
+            <p>📍 اصفهان، فولادشهر</p>
+            <p>📞 09369817656</p>
+            <p>⏰ همه روزه ۷:۰۰ تا ۲۴:۰۰</p>
+
+        </div>
+
+    </div>
+
+    <div class="copyright">
+        © تمامی حقوق این سایت متعلق به هایپر پروتئین واروک می‌باشد.
+    </div>
+
+</div>
 
 </footer>
 
 
 <!-- CART -->
 
-<div
-class="modal"
-id="cartModal">
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
 
-<div class="modal-box">
+<aside class="cart-drawer" id="cartDrawer">
 
-<button
-class="close"
-onclick="closeModal('cartModal')">
-×
-</button>
+    <div class="cart-head">
 
-<h2>
-🛒 سبد خرید
-</h2>
+        <strong>🛒 سبد خرید واروک</strong>
 
-<div id="cartItems"></div>
+        <button class="close" onclick="closeCart()">×</button>
 
-<div
-class="total"
-id="cartTotal">
-مجموع: ۰ تومان
-</div>
+    </div>
 
-<button
-class="btn"
-onclick="openCheckout()">
-ادامه و ثبت سفارش
-</button>
+    <div class="cart-items" id="cartItems"></div>
 
-</div>
+    <div class="cart-footer">
 
-</div>
+        <div class="cart-total">
+            <span>مبلغ کل</span>
+            <span id="cartTotal">۰ تومان</span>
+        </div>
 
+        <button
+            class="btn btn-gold"
+            style="width:100%"
+            onclick="checkout()">
+            ادامه ثبت سفارش
+        </button>
 
-<!-- LOGIN -->
+    </div>
 
-<div
-class="modal"
-id="loginModal">
-
-<div class="modal-box">
-
-<button
-class="close"
-onclick="closeModal('loginModal')">
-×
-</button>
-
-<h2>
-ورود به حساب
-</h2>
-
-<form
-class="form"
-onsubmit="login(event)">
-
-<input
-id="loginPhone"
-placeholder="شماره موبایل"
-required>
-
-<input
-id="loginPassword"
-type="password"
-placeholder="رمز عبور"
-required>
-
-<button class="btn">
-ورود
-</button>
-
-</form>
-
-<hr style="margin:20px 0">
-
-<button
-class="btn"
-onclick="openRegister()">
-ساخت حساب جدید
-</button>
-
-<div id="loginMessage"></div>
-
-</div>
-
-</div>
-
-
-<!-- REGISTER -->
-
-<div
-class="modal"
-id="registerModal">
-
-<div class="modal-box">
-
-<button
-class="close"
-onclick="closeModal('registerModal')">
-×
-</button>
-
-<h2>
-ثبت‌نام
-</h2>
-
-<form
-class="form"
-onsubmit="register(event)">
-
-<input
-id="regName"
-placeholder="نام و نام خانوادگی"
-required>
-
-<input
-id="regPhone"
-placeholder="شماره موبایل"
-required>
-
-<input
-id="regPassword"
-type="password"
-placeholder="رمز عبور"
-required>
-
-<button class="btn">
-ثبت‌نام
-</button>
-
-</form>
-
-<div id="registerMessage"></div>
-
-</div>
-
-</div>
-
-
-<!-- CHECKOUT -->
-
-<div
-class="modal"
-id="checkoutModal">
-
-<div class="modal-box">
-
-<button
-class="close"
-onclick="closeModal('checkoutModal')">
-×
-</button>
-
-<h2>
-ثبت سفارش
-</h2>
-
-<form
-class="form"
-onsubmit="checkout(event)">
-
-<input
-id="orderName"
-placeholder="نام و نام خانوادگی"
-required>
-
-<input
-id="orderPhone"
-placeholder="شماره تماس"
-required>
-
-<textarea
-id="orderAddress"
-placeholder="آدرس کامل"
-required></textarea>
-
-<button class="btn">
-ثبت نهایی سفارش
-</button>
-
-</form>
-
-<div id="checkoutMessage"></div>
-
-</div>
-
-</div>
-
-
-<!-- WHOLESALE -->
-
-<div
-class="modal"
-id="wholesaleModal">
-
-<div class="modal-box">
-
-<button
-class="close"
-onclick="closeModal('wholesaleModal')">
-×
-</button>
-
-<h2>
-درخواست خرید عمده
-</h2>
-
-<form
-class="form"
-onsubmit="wholesale(event)">
-
-<input
-id="wholeName"
-placeholder="نام و نام خانوادگی"
-required>
-
-<input
-id="wholeCompany"
-placeholder="نام فروشگاه / شرکت">
-
-<input
-id="wholePhone"
-placeholder="شماره تماس"
-required>
-
-<input
-id="wholeType"
-placeholder="نوع فعالیت">
-
-<textarea
-id="wholeDetails"
-placeholder="توضیحات سفارش"></textarea>
-
-<button class="btn">
-ارسال درخواست
-</button>
-
-</form>
-
-<div id="wholeMessage"></div>
-
-</div>
-
-</div>
+</aside>
 
 
 <script>
 
-const API="";
-
 let products=[];
-
-let cart=JSON.parse(
-localStorage.getItem("varouk_cart")||"[]"
-);
-
-let token=
-localStorage.getItem("varouk_token")||"";
+let cart=JSON.parse(localStorage.getItem("varouk_cart")||"[]");
 
 
-function money(number){
-
-return Number(number||0)
-.toLocaleString("fa-IR")
-+" تومان";
-
-}
-
-
-function scrollToSection(id){
-
-document.getElementById(id)
-.scrollIntoView({
-behavior:"smooth"
-});
-
-}
-
-
-function closeModal(id){
-
-document.getElementById(id)
-.classList.remove("active");
-
-}
-
-
-function openModal(id){
-
-document.getElementById(id)
-.classList.add("active");
-
-}
+const money = n =>
+    new Intl.NumberFormat("fa-IR").format(Number(n||0))+" تومان";
 
 
 function saveCart(){
-
-localStorage.setItem(
-"varouk_cart",
-JSON.stringify(cart)
-);
-
-updateCartCount();
-
+    localStorage.setItem("varouk_cart",JSON.stringify(cart));
+    updateCartUI();
 }
 
 
-function updateCartCount(){
+function updateCartUI(){
 
-document.getElementById("cartCount")
-.innerText=
-cart.reduce(
-(sum,item)=>sum+item.qty,
-0
-);
+    const count=cart.reduce((s,x)=>s+x.qty,0);
 
-}
+    document.getElementById("cartCount").textContent=count;
 
+    const total=cart.reduce((s,x)=>s+(x.price*x.qty),0);
 
-async function loadCategories(){
+    document.getElementById("cartTotal").textContent=money(total);
 
-const res=
-await fetch(API+"/api/categories");
+    document.getElementById("cartTotalHeader").textContent=money(total);
 
-const data=
-await res.json();
+    const box=document.getElementById("cartItems");
 
-const box=
-document.getElementById("categories");
+    if(!cart.length){
 
-box.innerHTML="";
+        box.innerHTML=`
+            <div class="empty">
+                🛒<br>
+                سبد خرید شما خالی است
+            </div>
+        `;
 
-data.forEach(c=>{
+        return;
+    }
 
-const div=
-document.createElement("div");
+    box.innerHTML=cart.map((x,i)=>`
 
-div.className="category";
+        <div class="cart-item">
 
-div.innerHTML=
-"🛒 "+c.name;
+            <div
+                class="cart-item-img"
+                style="background-image:url('${x.image}')">
+            </div>
 
-div.onclick=()=>{
-loadProducts(c.slug);
-};
+            <div class="cart-item-info">
 
-box.appendChild(div);
+                <strong>${x.name}</strong>
 
-});
+                <p>${money(x.price)}</p>
 
-}
+                <div style="display:flex;gap:5px;margin-top:4px">
 
+                    <button
+                        class="qty-btn"
+                        onclick="changeQty(${i},1)">+</button>
 
-async function loadProducts(category=""){
+                    <span style="padding:3px 7px">
+                        ${x.qty}
+                    </span>
 
-let url=
-API+"/api/products";
+                    <button
+                        class="qty-btn"
+                        onclick="changeQty(${i},-1)">−</button>
 
-if(category){
-url+="?category="+encodeURIComponent(category);
-}
+                    <button
+                        class="qty-btn"
+                        onclick="removeCart(${i})">×</button>
 
-const res=
-await fetch(url);
+                </div>
 
-products=
-await res.json();
+            </div>
 
-renderProducts();
+        </div>
 
-}
-
-
-function renderProducts(){
-
-const box=
-document.getElementById("productList");
-
-if(!products.length){
-
-box.innerHTML=
-"<p>محصولی پیدا نشد.</p>";
-
-return;
-
-}
-
-box.innerHTML="";
-
-products.forEach(p=>{
-
-const card=
-document.createElement("div");
-
-card.className="product";
-
-card.innerHTML=`
-
-<div class="product-icon">
-${p.emoji||"🛒"}
-</div>
-
-<h3>
-${p.name}
-</h3>
-
-<div class="product-desc">
-${p.description||""}
-</div>
-
-<div class="product-price">
-${money(p.price)}
-</div>
-
-${
-p.old_price
-?
-`<span class="old">
-${money(p.old_price)}
-</span>`
-:""
-}
-
-<div style="margin:8px 0">
-واحد فروش: ${p.unit}
-</div>
-
-<button
-class="btn"
-onclick="addToCart(${p.id})">
-
-افزودن به سبد 🛒
-
-</button>
-`;
-
-box.appendChild(card);
-
-});
+    `).join("");
 
 }
 
 
 function addToCart(id){
 
-const p=
-products.find(x=>x.id===id);
+    const p=products.find(x=>x.id==id);
 
-if(!p)return;
+    if(!p)return;
 
-const existing=
-cart.find(x=>x.productId===id);
+    const found=cart.find(x=>x.id==p.id);
 
-if(existing){
+    if(found){
 
-existing.qty++;
+        found.qty++;
 
-}else{
+    }else{
 
-cart.push({
-productId:id,
-name:p.name,
-price:p.price,
-unit:p.unit,
-qty:1
-});
+        cart.push({
+            id:p.id,
+            name:p.name,
+            price:p.price,
+            qty:1,
+            image:getProductImage(p)
+        });
+
+    }
+
+    saveCart();
+
+    openCart();
 
 }
 
-saveCart();
 
-alert(
-"محصول به سبد خرید اضافه شد ✅"
-);
+function changeQty(i,d){
+
+    cart[i].qty+=d;
+
+    if(cart[i].qty<=0){
+        cart.splice(i,1);
+    }
+
+    saveCart();
+
+}
+
+
+function removeCart(i){
+
+    cart.splice(i,1);
+
+    saveCart();
 
 }
 
 
 function openCart(){
 
-renderCart();
+    document.getElementById("overlay").classList.add("show");
+    document.getElementById("cartDrawer").classList.add("show");
 
-openModal("cartModal");
-
-}
-
-
-function renderCart(){
-
-const box=
-document.getElementById("cartItems");
-
-if(!cart.length){
-
-box.innerHTML=
-"<div class='notice'>سبد خرید خالی است.</div>";
-
-document.getElementById("cartTotal")
-.innerText="مجموع: ۰ تومان";
-
-return;
-
-}
-
-box.innerHTML="";
-
-let total=0;
-
-cart.forEach((item,index)=>{
-
-total+=item.price*item.qty;
-
-const div=
-document.createElement("div");
-
-div.className="cart-item";
-
-div.innerHTML=`
-
-<div>
-<strong>
-${item.name}
-</strong>
-<br>
-${money(item.price)}
-</div>
-
-<div class="qty">
-
-<button
-onclick="changeQty(${index},-1)">
-−
-</button>
-
-<span>${item.qty}</span>
-
-<button
-onclick="changeQty(${index},1)">
-+
-</button>
-
-</div>
-
-`;
-
-box.appendChild(div);
-
-});
-
-document.getElementById("cartTotal")
-.innerText=
-"مجموع: "+money(total);
+    updateCartUI();
 
 }
 
 
-function changeQty(index,value){
+function closeCart(){
 
-cart[index].qty+=value;
-
-if(cart[index].qty<=0){
-
-cart.splice(index,1);
-
-}
-
-saveCart();
-
-renderCart();
+    document.getElementById("overlay").classList.remove("show");
+    document.getElementById("cartDrawer").classList.remove("show");
 
 }
 
 
-function openLogin(){
+function getProductImage(p){
 
-openModal("loginModal");
+    const imgs={
+        "مرغ کامل تازه":
+        "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=600&q=80",
 
-}
+        "فیله مرغ":
+        "https://images.unsplash.com/photo-1604503468506-a8da13d82791?auto=format&fit=crop&w=600&q=80",
 
+        "شنیسل مرغ":
+        "https://images.unsplash.com/photo-1600891964092-4316c288032e?auto=format&fit=crop&w=600&q=80",
 
-function openRegister(){
+        "ران مرغ":
+        "https://images.unsplash.com/photo-1587593810167-a84920ea0781?auto=format&fit=crop&w=600&q=80"
+    };
 
-closeModal("loginModal");
-
-openModal("registerModal");
-
-}
-
-
-async function login(event){
-
-event.preventDefault();
-
-const phone=
-document.getElementById("loginPhone").value;
-
-const password=
-document.getElementById("loginPassword").value;
-
-const res=
-await fetch(
-API+"/api/auth/login",
-{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify({
-phone,
-password
-})
-}
-);
-
-const data=
-await res.json();
-
-if(!res.ok){
-
-document.getElementById("loginMessage")
-.innerHTML=
-"<div class='notice'>"+
-data.error+
-"</div>";
-
-return;
-
-}
-
-token=data.token;
-
-localStorage.setItem(
-"varouk_token",
-token
-);
-
-closeModal("loginModal");
-
-alert(
-"خوش آمدید "+data.user.name+" 🌹"
-);
+    return imgs[p.name] ||
+    "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=80";
 
 }
 
 
-async function register(event){
+async function loadProducts(){
 
-event.preventDefault();
+    try{
 
-const name=
-document.getElementById("regName").value;
+        const res=await fetch("/api/products");
 
-const phone=
-document.getElementById("regPhone").value;
+        products=await res.json();
 
-const password=
-document.getElementById("regPassword").value;
+        renderProducts(products);
 
-const res=
-await fetch(
-API+"/api/auth/register",
-{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify({
-name,
-phone,
-password
-})
-}
-);
+    }catch(e){
 
-const data=
-await res.json();
+        document.getElementById("productsGrid").innerHTML=
+        `<div class="empty">خطا در دریافت محصولات</div>`;
 
-if(!res.ok){
-
-document.getElementById("registerMessage")
-.innerHTML=
-"<div class='notice'>"+
-data.error+
-"</div>";
-
-return;
-
-}
-
-token=data.token;
-
-localStorage.setItem(
-"varouk_token",
-token
-);
-
-closeModal("registerModal");
-
-alert(
-"ثبت‌نام با موفقیت انجام شد ✅"
-);
+    }
 
 }
 
 
-async function openCheckout(){
+function renderProducts(list){
 
-if(!cart.length){
+    const box=document.getElementById("productsGrid");
 
-alert("سبد خرید خالی است.");
+    if(!list.length){
 
-return;
+        box.innerHTML=`<div class="empty">محصولی پیدا نشد</div>`;
 
-}
+        return;
 
-if(!token){
+    }
 
-closeModal("cartModal");
+    box.innerHTML=list.slice(0,6).map(p=>`
 
-openLogin();
+        <article class="product-card">
 
-alert(
-"برای ثبت سفارش ابتدا وارد حساب شوید."
-);
+            ${p.old_price ? `<span class="discount">ویژه</span>` : ""}
 
-return;
+            <div
+                class="product-image"
+                style="background-image:url('${getProductImage(p)}')">
+            </div>
 
-}
+            <div class="product-info">
 
-closeModal("cartModal");
+                <div class="product-name">
+                    ${p.name}
+                </div>
 
-openModal("checkoutModal");
+                <div class="product-unit">
+                    ${p.unit}
+                </div>
 
-}
+                <div class="price">
 
+                    ${money(p.price)}
 
-async function checkout(event){
+                    ${
+                        p.old_price
+                        ?
+                        `<span class="old-price">${money(p.old_price)}</span>`
+                        :
+                        ""
+                    }
 
-event.preventDefault();
+                </div>
 
-const body={
-items:cart.map(x=>({
-productId:x.productId,
-qty:x.qty
-})),
-name:
-document.getElementById("orderName").value,
-phone:
-document.getElementById("orderPhone").value,
-address:
-document.getElementById("orderAddress").value
-};
+                <div class="product-bottom">
 
-const res=
-await fetch(
-API+"/api/orders",
-{
-method:"POST",
-headers:{
-"Content-Type":"application/json",
-Authorization:"Bearer "+token
-},
-body:JSON.stringify(body)
-}
-);
+                    <button
+                        class="qty-btn"
+                        onclick="quickAdd(${p.id})">+</button>
 
-const data=
-await res.json();
+                    <button
+                        class="add-btn"
+                        onclick="addToCart(${p.id})">
+                        افزودن به سبد
+                    </button>
 
-if(!res.ok){
+                    <button
+                        class="qty-btn"
+                        onclick="quickAdd(${p.id})">+</button>
 
-document.getElementById("checkoutMessage")
-.innerHTML=
-"<div class='notice'>"+
-data.error+
-"</div>";
+                </div>
 
-return;
+            </div>
 
-}
+        </article>
 
-cart=[];
+    `).join("");
 
-saveCart();
-
-closeModal("checkoutModal");
-
-alert(
-"سفارش شما با موفقیت ثبت شد ✅\n"+
-"شماره سفارش: "+
-data.order_no
-);
+    renderRanked(list);
 
 }
 
 
-function openWholesale(){
+function quickAdd(id){
 
-openModal("wholesaleModal");
-
-}
-
-
-async function wholesale(event){
-
-event.preventDefault();
-
-const body={
-name:
-document.getElementById("wholeName").value,
-company:
-document.getElementById("wholeCompany").value,
-phone:
-document.getElementById("wholePhone").value,
-businessType:
-document.getElementById("wholeType").value,
-details:
-document.getElementById("wholeDetails").value
-};
-
-const res=
-await fetch(
-API+"/api/wholesale",
-{
-method:"POST",
-headers:{
-"Content-Type":"application/json"
-},
-body:JSON.stringify(body)
-}
-);
-
-const data=
-await res.json();
-
-if(!res.ok){
-
-document.getElementById("wholeMessage")
-.innerHTML=
-"<div class='notice'>"+
-data.error+
-"</div>";
-
-return;
+    addToCart(id);
 
 }
 
-closeModal("wholesaleModal");
 
-alert(
-"درخواست شما ثبت شد ✅\nبه‌زودی با شما تماس می‌گیریم."
-);
+function renderRanked(list){
+
+    const box=document.getElementById("rankList");
+
+    box.innerHTML=list.slice(0,4).map((p,i)=>`
+
+        <div class="rank-item">
+
+            <div class="rank-number">
+                ${i+1}
+            </div>
+
+            <div
+                class="rank-image"
+                style="background-image:url('${getProductImage(p)}')">
+            </div>
+
+            <div>
+
+                <div class="rank-name">
+                    ${p.name}
+                </div>
+
+                <div class="rank-price">
+                    ${money(p.price)}
+                </div>
+
+            </div>
+
+        </div>
+
+    `).join("");
 
 }
 
 
 async function loadDailyPrices(){
 
-const res=
-await fetch(API+"/api/daily-prices");
+    try{
 
-const data=
-await res.json();
+        const res=await fetch("/api/daily-prices");
 
-const box=
-document.getElementById("dailyPrices");
+        const data=await res.json();
 
-box.innerHTML="";
+        const box=document.getElementById("dailyPrices");
 
-data.forEach(p=>{
+        box.innerHTML=data.map(p=>`
 
-const row=
-document.createElement("div");
+            <div class="daily-item">
 
-row.className="price-row";
+                <span>${p.name}</span>
 
-row.innerHTML=`
+                <span class="daily-price">
+                    ${money(p.price)}
+                </span>
 
-<span>
-${p.name}
-</span>
+            </div>
 
-<strong>
-${money(p.price)}
-/
-${p.unit}
-</strong>
+        `).join("");
 
-`;
+    }catch(e){
 
-box.appendChild(row);
+        document.getElementById("dailyPrices").innerHTML=
+        `<div class="empty">قیمت‌ها در دسترس نیست</div>`;
 
-});
+    }
 
 }
 
 
-async function init(){
+let searchTimer;
 
-updateCartCount();
+function searchProducts(){
 
-await Promise.all([
-loadCategories(),
-loadProducts(),
-loadDailyPrices()
-]);
+    clearTimeout(searchTimer);
+
+    searchTimer=setTimeout(()=>{
+
+        const value=
+            document.getElementById("searchInput").value
+            .trim()
+            .toLowerCase();
+
+        if(!value){
+
+            renderProducts(products);
+
+            return;
+
+        }
+
+        const result=products.filter(p=>
+            p.name.toLowerCase().includes(value)
+        );
+
+        renderProducts(result);
+
+        document
+            .getElementById("shop")
+            .scrollIntoView({behavior:"smooth"});
+
+    },200);
 
 }
 
 
-init();
+function showLogin(){
+
+    alert(
+        "بخش ورود و ثبت‌نام به سیستم سفارش متصل است.\n\n" +
+        "در مرحله بعد می‌توانیم پنجره ورود حرفه‌ای طراحی کنیم."
+    );
+
+}
+
+
+async function checkout(){
+
+    if(!cart.length){
+
+        alert("سبد خرید شما خالی است.");
+
+        return;
+
+    }
+
+    const token=localStorage.getItem("varouk_token");
+
+    if(!token){
+
+        alert(
+            "برای ثبت نهایی سفارش ابتدا باید وارد حساب کاربری شوید."
+        );
+
+        showLogin();
+
+        return;
+
+    }
+
+    alert(
+        "سبد خرید آماده ثبت سفارش است.\n" +
+        "در مرحله پرداخت اطلاعات سفارش تکمیل می‌شود."
+    );
+
+}
+
+
+function subscribe(e){
+
+    e.preventDefault();
+
+    const phone=
+        document.getElementById("newsletterPhone").value.trim();
+
+    if(!phone){
+
+        alert("لطفاً شماره موبایل را وارد کنید.");
+
+        return;
+
+    }
+
+    alert("شماره شما با موفقیت ثبت شد ❤️");
+
+    e.target.reset();
+
+}
+
+
+/* INITIALIZE */
+
+updateCartUI();
+loadProducts();
+loadDailyPrices();
 
 </script>
 
 </body>
-
 </html>
